@@ -22,8 +22,8 @@ class App extends Component {
             <Route exact path="/"
               component={() => <h1>Description goes here</h1>} />
 
-            {/* <Route exact path="/dashboard"
-              component={Dashboard} /> */}
+            <Route exact path="/dashboard"
+              component={Dashboard} />
           </main>
           <footer>
             <Route path="/dashboard"
