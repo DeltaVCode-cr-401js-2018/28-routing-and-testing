@@ -5,7 +5,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        some text to check connection
+        <header>
+          <h1>SalmonCookies</h1>
+          <nav>
+            <ul>
+            </ul>
+          </nav>
+        </header>
       </div>
     );
   }
