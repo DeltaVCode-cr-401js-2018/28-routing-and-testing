@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
+import Dashboard from './components/dashboard/dashboard'
+
 class App extends Component {
   render() {
     return (
@@ -23,6 +25,10 @@ class App extends Component {
             {/* <Route exact path="/dashboard"
               component={Dashboard} /> */}
           </main>
+          <footer>
+            <Route path="/dashboard"
+              component={() => <p>If you are on the dashboard you will see this message. Hello!</p>} />
+          </footer>
         </div>
       </BrowserRouter>
     );
