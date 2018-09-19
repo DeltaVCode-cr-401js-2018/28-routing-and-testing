@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {Link,Route} from 'react-router-dom';
+
+import Landing from './Landing';
+import Dashboard from './Dashboard';
+
 import '../styles/App.css';
 
 class App extends Component {
@@ -16,8 +20,8 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <Route path="/" component={Landing}/>
-          <Route path='/dashboard' component={Dashboard}/>
+          <Route exact path="/" component={Landing}/>
+          <Route path="/dashboard" component={Dashboard}/>
         </main>
       </div>
     );
