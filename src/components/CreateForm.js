@@ -32,10 +32,10 @@ export default class Form extends Component {
   render() {
     return (
       <form onSubmit={this.onComplete}>
-        <input type="text" name="storeName" placeholder="New store name" onChange={this.handleChange}/>
-        <input type="number" name="max" placeholder="min Number of customers" onChange={this.handleChange}/>
-        <input type="number" name="min" placeholder="max Number of customers" onChange={this.handleChange}/>
-        <input type="number" name="avg" placeholder="avg sales" onChange={this.handleChange}/>
+        <label>Store Name<input type="text" name="storeName" value={this.state.storeName} onChange={this.handleChange}/></label>
+        <label>Max # of Customers/hr<input type="number" step="1" name="max" value={this.state.max} onChange={this.handleChange}/></label>
+        <label>Min # of Customers/hr<input type="number" step="1" name="min" value={this.state.min} onChange={this.handleChange}/></label>
+        <label>Avg # of sales/customers<input type="number" step="0.01" name="avg" value={this.state.avg} onChange={this.handleChange}/></label>
         <input type="submit"/>
       </form>
     );
