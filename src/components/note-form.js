@@ -10,12 +10,18 @@ const defaultState = {
 export default class NoteForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = defaultState;
+    this.state = props.note || defaultState;
   }
   onComplete = (e) =>{
     e.preventDefault();
-    this.props.handleAddNote(this.state);
-    this.setState(defaultState);
+    this.props.handleComplete(this.state);
+    if(!this.props.note){
+      this.setState(defaultState);
+    }
+    
+    if(this.props.handleClose){
+      this.props.handleClose();
+    }
   }
   handleChange = (e) =>{
     const {name, value} = e.target;
