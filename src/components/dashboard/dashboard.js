@@ -16,18 +16,6 @@ export default class Dashboard extends Component {
       error: null,
     };
   }
-
-  renderNoteList() {
-    return (
-      <ul>
-        {this.state.notes.map(note => (
-          <li key={note._id}>
-            {note.title} : {note.content}
-          </li>
-        ))}
-      </ul>
-    );
-  }
   
   addNote = (note) => {
     note._id = uuid();
@@ -45,8 +33,23 @@ export default class Dashboard extends Component {
         <NoteForm
           addNote={this.addNote}
         />
-        { this.renderNoteList() }
+
+        <NoteList notes={this.state.notes} />
       </React.Fragment>
+    );
+  }
+}
+
+class NoteList extends Component {
+  render() {
+    return (
+      <ul>
+        {this.props.notes.map(note => (
+          <li key={note._id}>
+            {note.title} : {note.content}
+          </li>
+        ))}
+      </ul>
     );
   }
 }
