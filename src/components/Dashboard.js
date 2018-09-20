@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Form from './CreateForm';
+import List from './List';
+
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +32,7 @@ export default class Dashboard extends Component {
     return (
       <React.Fragment>
         <Form handleSubmit={this.addStore}/>
+        <List/>
       </React.Fragment>
     );
   }
