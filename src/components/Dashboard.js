@@ -21,10 +21,9 @@ export default class Dashboard extends Component {
     console.log('__State__',this.state);
   }
 
-  addStore = (state) => {
-    console.log('adding '+state+' to state');
+  addStore = (store) => {
     this.setState(prevState => ({
-      stores:[...prevState.stores, state],
+      stores:[...prevState.stores, store],
     }));
   }
 
