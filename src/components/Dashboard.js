@@ -33,7 +33,7 @@ export default class Dashboard extends Component {
     return (
       <React.Fragment>
         <Form handleSubmit={this.addStore}/>
-        <List/>
+        <List listOfStores={this.state.stores}/>
       </React.Fragment>
     );
   }
