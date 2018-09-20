@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 import Form from './CreateForm';
 import List from './List';
@@ -22,6 +23,7 @@ export default class Dashboard extends Component {
   }
 
   addStore = (store) => {
+    store._id = uuid();
     this.setState(prevState => ({
       stores:[...prevState.stores, store],
     }));
