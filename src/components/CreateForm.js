@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 const defaultState = {
   storeName: '',
-  min: 0,
   max: 1,
+  min: 0,
   avg: 0,
 }
 
