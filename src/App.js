@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 
 import Dashboard from './components/dashboard/dashboard'
@@ -20,14 +19,16 @@ class App extends Component {
           </header>
           <main>
             <Route exact path="/"
-              component={() => <h1>Description goes here</h1>} />
+              component={() => <p>You can use this app to create notes. Go to 
+                Dashboard to add your own notes with a title and content.</p>} />
 
             <Route exact path="/dashboard"
               component={Dashboard} />
           </main>
           <footer>
             <Route path="/dashboard"
-              component={() => <p>If you are on the dashboard you will see this message. Hello!</p>} />
+              component={() => <p>If you are on the dashboard you will see this message, 
+                just testing how it works. Hello!</p>} />
           </footer>
         </div>
       </BrowserRouter>

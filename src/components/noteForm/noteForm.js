@@ -18,7 +18,7 @@ export default class NoteForm extends Component {
   }
 
   onChange = (event) => {
-    const { name, value, type } = event.target;
+    const { name, value } = event.target;
 
     this.setState({
       [name]: value,
