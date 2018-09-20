@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteForm from './note-form';
 import uuid from 'uuid';
+import NoteList from './note-list';
 
 export default class Dashboard extends React.Component{
   constructor(props){
@@ -11,18 +12,21 @@ export default class Dashboard extends React.Component{
     };
   }
 
-  renderNoteList(){
-    return(
-      <div>
-        {this.state.notes.map(note=>(
-          <section key={note._id}>
-            <h2>{note.title}</h2>
-            <p>{note.content}</p>
-            <button id={note._id} onClick={this.removeNote}>Remove {note.title}?</button>
-          </section>
-        ))}
-      </div>
-    )
+  handleUpdateNote = (note) =>{
+    if(!note.title){
+      this.setState({
+        error: 'Title is required'
+      });
+      return;
+    }
+    console.log(note);
+    let updatedNotes = this.state.notes.map(eNote =>
+        eNote._id === note._id ? note : eNote
+      );
+    this.setState(prevState=>({
+      error: null,
+      notes: updatedNotes,
+    }));
   }
 
   handleAddNote = (note) =>{
@@ -44,7 +48,12 @@ export default class Dashboard extends React.Component{
 
   removeNote = (e) =>{
     let id = e.target.id;
-    let arr = this.state.notes.filter(note=> note._id);
+    let arr = this.state.notes.filter(note=> note._id !== id);
+    console.log(arr);
+    this.setState({
+      error: null,
+      notes: arr,
+    });
   }
 
   render(){
@@ -52,8 +61,8 @@ export default class Dashboard extends React.Component{
       <React.Fragment>
         <h1>Notes</h1>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <NoteForm handleAddNote={this.handleAddNote}/>
-        {this.renderNoteList()}
+        <NoteForm handleComplete={this.handleAddNote}/>
+        <NoteList handleUpdate={this.handleUpdateNote} removeNote={this.removeNote} notes={this.state.notes}/>
       </React.Fragment>
     )
   }
