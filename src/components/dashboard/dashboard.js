@@ -45,11 +45,20 @@ class NoteList extends Component {
     return (
       <ul>
         {this.props.notes.map(note => (
-          <li key={note._id}>
-            {note.title} : {note.content}
-          </li>
+          <NoteItem note={note} />
         ))}
       </ul>
+    );
+  }
+}
+
+class NoteItem extends Component {
+  render() {
+    const { note } = this.props;
+    return (
+      <li key={note._id}>
+        {note.title} : {note.content}
+      </li>
     );
   }
 }
