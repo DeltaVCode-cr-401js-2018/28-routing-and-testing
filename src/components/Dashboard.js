@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Form from './CreateForm';
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -18,10 +19,17 @@ export default class Dashboard extends Component {
     console.log('__State__',this.state);
   }
 
+  addStore = (state) => {
+    console.log('adding '+state+' to state');
+    this.setState(prevState => ({
+      stores:[...prevState.stores, state],
+    }));
+  }
+
   render() {
     return (
       <React.Fragment>
-        Dashboard connected!
+        <Form handleSubmit={this.addStore}/>
       </React.Fragment>
     );
   }
