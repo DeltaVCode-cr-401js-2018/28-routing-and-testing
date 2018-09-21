@@ -29,11 +29,16 @@ export default class Dashboard extends Component {
     }));
   }
 
+  deleteStore =(storeID) => {
+    let adjustedStoreRoster = this.state.stores.filter(x => x._id !== storeID);
+    this.setState({stores:adjustedStoreRoster});
+  }
+
   render() {
     return (
       <React.Fragment>
         <Form handleSubmit={this.addStore}/>
-        <List listOfStores={this.state.stores}/>
+        <List listOfStores={this.state.stores} delete={this.deleteStore}/>
       </React.Fragment>
     );
   }
