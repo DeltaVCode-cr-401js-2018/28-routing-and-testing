@@ -1,0 +1,39 @@
+/*
+Rich Black #00171F
+Prussian Blue #003459
+Cerulean #007EA7
+Vivid Cerulean #00A7E1
+White #FFFFFF
+*/
+
+.App {
+  text-align: center;
+}
+
+*{
+  margin:0; 
+}
+li{
+  list-style-type:none;
+}
+nav li {
+  color:#FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+li:visited{
+  color:#FFFFFF;
+  list-style-type:none;
+}
+.List {
+  float:right;
+  width:50%;
+}
+.form {
+  float:left;
+  width:50%;
+}
+header {
+  color:#FFFFFF;
+  background-color:#003459;
+}
