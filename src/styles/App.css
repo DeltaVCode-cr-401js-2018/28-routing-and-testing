@@ -1,0 +1,20 @@
+/*
+Rich Black #00171F
+Prussian Blue #003459
+Cerulean #007EA7
+Vivid Cerulean #00A7E1
+White #FFFFFF
+*/
+
+.App {
+  text-align: center;
+}
+
+*{
+  margin:0;
+  
+}
+header {
+  color:#FFFFFF;
+  background-color:#003459;
+}
